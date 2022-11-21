@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import "./App.css";
 import SearchBar from "./components/input/SearchBar";
 import logo from "./mlh-prep.png";
-import { change_bg, change_icon } from "./color_scheme.js";
 
 function App() {
   const [error, setError] = useState(null);
@@ -22,7 +21,6 @@ function App() {
           } else {
             setIsLoaded(true);
             setResults(result);
-            change_bg(result?.weather[0].main)
           }
         },
         (error) => {
@@ -41,6 +39,7 @@ function App() {
       <img className="logo" src={logo} alt="MLH Prep Logo"></img>
       <div>
         <h2>Enter a city below 👇</h2>
+
         <SearchBar setCity={setCity} />
 
         <div className="Results">
